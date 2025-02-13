@@ -510,7 +510,7 @@ const CreateListing = () => {
                 required
               />
             </div>
-          </div>
+          </div>``
 
           <button className="submit_btn" type="submit">
             CREATE YOUR LISTING

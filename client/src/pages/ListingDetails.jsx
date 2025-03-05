@@ -3,12 +3,14 @@ import "../styles/ListingDetails.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import { facilities } from "../data";
 
-// import "react-date-range/dist/styles.css";
-// import "react-date-range/dist/theme/default.css";
-// import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { DateRange } from 'react-date-range';
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
+
+
 
 const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -31,7 +33,7 @@ const ListingDetails = () => {
     } catch (err) {
       console.log("Fetch Listing Details Failed", err.message);
     }
-  };
+  }; 
 
   useEffect(() => {
     getListingDetails();
@@ -48,6 +50,15 @@ const ListingDetails = () => {
       key: "selection",
     },
   ]);
+
+// const [dateRange, setDateRange] = useState([
+//     {
+//       startDate: new Date(),
+//       endDate: null,
+//       key: 'selection'
+//     }
+//   ]);
+
 
   const handleSelect = (ranges) => {
     // Update the selected date range when user makes a selection
@@ -90,12 +101,14 @@ const ListingDetails = () => {
     }
   }
 
+
+
   return loading ? (
     <Loader />
   ) : (
     <>
       <Navbar />
-      
+
       <div className="listing-details">
         <div className="title">
           <h1>{listing.title}</h1>
@@ -163,7 +176,16 @@ const ListingDetails = () => {
           <div>
             <h2>How long do you want to stay?</h2>
             <div className="date-range-calendar">
-              {/* <DateRange ranges={dateRange} onChange={handleSelect} /> */}
+              <DateRange ranges={dateRange} onChange={handleSelect} />
+{/* 
+              <DateRange
+                editableDateInputs={true}
+                onChange={item => setDateRange([item.selection])}
+                moveRangeOnFirstSelection={false}
+                ranges={dateRange}
+              /> */}
+
+
               {dayCount > 1 ? (
                 <h2>
                   ${listing.price} x {dayCount} nights
@@ -186,7 +208,6 @@ const ListingDetails = () => {
         </div>
       </div>
 
-      
     </>
   );
 };

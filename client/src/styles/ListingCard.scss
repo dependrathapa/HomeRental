@@ -77,6 +77,25 @@
     font-weight: 700;
     font-size: 18px;
   }
+  .book-button {
+    background-color: #007bff; // Blue background
+    color: white; // White text
+    border: none; // No border
+    padding: 10px 20px; // Padding around the text
+    border-radius: 5px; // Rounded corners
+    cursor: pointer; // Pointer cursor on hover
+    font-size: 16px; // Font size
+    transition: background-color 0.3s; // Smooth transition for hover effect
+  
+    &:hover {
+      background-color: #0056b3; // Darker blue on hover
+    }
+  
+    &:disabled {
+      background-color: #c0c0c0; // Gray for disabled state
+      cursor: not-allowed; // Not allowed cursor for disabled state
+    }
+  }
 
   .favorite {
     position: absolute;
@@ -87,5 +106,20 @@
     cursor: pointer;
     z-index: 999;
     background: none;
+  }
+  .popup-message {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-message button {
+    margin-top: 10px;
   }
 }

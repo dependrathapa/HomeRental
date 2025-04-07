@@ -15,6 +15,14 @@ import AboutUs from "./pages/AboutUs";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
 
+//Admin 
+import AdminDashboard from "./components/AdminDashboard"; // Import your admin components
+import UserManagement from "./components/UserManagement";
+import PropertyApproval from "./components/PropertyApproval";
+import BookingManagement from "./components/BookingManagement";
+import Analytics from "./components/Analytics";
+
+
 function App() {
   return (
     <div>
@@ -34,6 +42,13 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund" element={<Refund />} />
+          {/* Admin routes */}
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/users" element={<UserManagement />} />
+          <Route path="/admin/properties" element={<PropertyApproval />} />
+          <Route path="/admin/bookings" element={<BookingManagement />} />
+          <Route path="/admin/analytics" element={<Analytics />} />
         </Routes>
       </BrowserRouter>
     </div>

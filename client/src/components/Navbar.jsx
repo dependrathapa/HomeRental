@@ -84,6 +84,13 @@ const Navbar = () => {
             <Link to={`/${user._id}/properties`}>Property List</Link>
             <Link to={`/${user._id}/reservations`}>Reservation List</Link>
             <Link to="/create-listing">Become A Host</Link>
+      
+ {/* Admin link: Only visible to admin users */}
+            {user.role === 'admin' && (
+              <Link to="/admin">Admin Dashboard</Link>
+            )}
+
+
 
             <Link
               to="/login"

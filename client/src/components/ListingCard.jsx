@@ -159,7 +159,7 @@ const ListingCard = ({
         <>
           <p>{type}</p>
           <p>
-            <span>${price}</span> per night
+            <span>Rs{price}</span> per night
           </p>
           <button onClick={handleBooking} className="book-button">
             Book Now

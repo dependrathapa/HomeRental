@@ -44,7 +44,7 @@ const PropertyList = () => {
             listingPhotoPaths,
             city,
             province,
-            country,
+            country,        
             category,
             type,
             price,
